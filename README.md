@@ -28,7 +28,7 @@ The processor pipeline is divided into three distinct stages to balance the crit
 ## Project Structure
 
 * **`src/`**: Core Verilog implementation of the RV32I pipeline stages and memory modules.
-* * **`include/`**: Contains header files (`opcode.vh`) defining RISC-V instructions and control signals.
+* **`include/`**: Contains header files (`opcode.vh`) defining RISC-V instructions and control signals.
 * **`testbench/`**: Verilog testbenches for automated simulation and verification of the processor pipeline.
 * **`simulation/`**: The Vivado `Makefile` and environment setup for hardware simulation.
 * **`mem_generator/`**: C-to-Hex toolchain including the cross-compiler Makefile and test programs (Fibonacci, Sort, etc.).
