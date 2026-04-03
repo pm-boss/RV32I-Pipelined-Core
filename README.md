@@ -25,6 +25,16 @@ The processor pipeline is divided into three distinct stages to balance the crit
    - Handles memory read operations with appropriate sign/zero extensions (`LB`, `LHU`, etc.).
    - Resolves Write-Back to the Register File.
 
+## Project Structure
+
+* **`src/`**: Core Verilog implementation of the RV32I pipeline stages and memory modules.
+* **`include/`**: Contains header files (`opcode.vh`) defining RISC-V instructions and control signals.
+* **`testbench/`**: Verilog testbenches for automated simulation and verification of the processor pipeline.
+* **`simulation/`**: The Vivado `Makefile` and environment setup for hardware simulation.
+* **`mem_generator/`**: C-to-Hex toolchain including the cross-compiler Makefile and test programs (Fibonacci, Sort, etc.).
+* **`top_fpga.v`**: The top-level module for FPGA synthesis, mapping processor I/O to physical hardware.
+* **`constraint.xdc`**: Xilinx Design Constraints for pin mapping and timing requirements.
+
 ## Key Features
 
 - **Hazard Handling:** Implements a localized two-cycle branch stall logic to prevent executing invalid instructions following a taken branch.
